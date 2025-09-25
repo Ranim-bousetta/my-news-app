@@ -1,7 +1,7 @@
 import random from "/assets/random.jpg";
 export default function NewsCard({ title, url, urlToImage, content }) {
   return (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+    <div className=" max-w-sm bg-white border border-gray-200 rounded-lg shadow-md h-full">
       <img
         src={urlToImage ? urlToImage : random}
         className="w-full h-48 object-cover rounded-t-lg"

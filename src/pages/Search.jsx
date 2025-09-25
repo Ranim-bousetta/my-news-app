@@ -22,7 +22,7 @@ export default function Search() {
           {state.toUpperCase()}
         </span>
       </h1>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-4 items-start">
         {!news && (
           <h1 className="text-center text-2xl font-bold text-gray-700 mt-20">
             The searched word did not match

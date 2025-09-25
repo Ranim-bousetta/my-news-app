@@ -17,8 +17,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-4">
           {/* Brand */}
-          <Link to="/">
+          <Link to="/" className="flex items-center space-x-2">
             <img src="/assets/logo.png" alt="logo " className="w-16" />
+            <span className="text-2xl font-bold text-blue-700">MyNews</span>
           </Link>
 
           {/* Mobile toggle */}
