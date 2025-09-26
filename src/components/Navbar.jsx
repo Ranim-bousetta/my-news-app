@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="shadow-md bg-white">
+    <header className="shadow-md bg-white dark:bg-gray-900 dark:text-white">
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-4">
           {/* Brand */}
@@ -40,13 +40,13 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/"
-                  className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100"
+                  className="block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-600"
                 >
                   Home
                 </Link>
               </li>
               <li className="relative group">
-                <button className="flex items-center px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <button className="flex items-center px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-600">
                   Categories
                   <svg
                     className="ml-1 w-4 h-4"
@@ -62,9 +62,9 @@ const Navbar = () => {
                     />
                   </svg>
                 </button>
-                <ul className="absolute left-0 hidden top-full w-40 bg-white border rounded-md shadow-lg group-hover:block z-10 cursor-pointer">
+                <ul className="absolute left-0 hidden top-full w-40 bg-white border rounded-md shadow-lg group-hover:block z-10 cursor-pointer dark:bg-gray-900 dark:text-white ">
                   <li
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-600"
                     onClick={() =>
                       navigate("/categories", {
                         state: { category: "business" },
@@ -77,7 +77,7 @@ const Navbar = () => {
                     <hr className="border-gray-200" />
                   </li>
                   <li
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-600"
                     onClick={() =>
                       navigate("/categories", {
                         state: { category: "general" },
@@ -90,7 +90,7 @@ const Navbar = () => {
                     <hr className="border-gray-200" />
                   </li>
                   <li
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-600"
                     onClick={() =>
                       navigate("/categories", {
                         state: { category: "science" },
@@ -103,7 +103,7 @@ const Navbar = () => {
                     <hr className="border-gray-200" />
                   </li>
                   <li
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-600"
                     onClick={() =>
                       navigate("/categories", { state: { category: "health" } })
                     }
@@ -114,7 +114,7 @@ const Navbar = () => {
                     <hr className="border-gray-200" />
                   </li>
                   <li
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-gray-600"
                     onClick={() =>
                       navigate("/categories", { state: { category: "sports" } })
                     }
@@ -137,9 +137,10 @@ const Navbar = () => {
               className="flex items-center mt-4 lg:mt-0 lg:ml-6"
             >
               <input
+                required
                 type="search"
                 placeholder="Search for news..."
-                className="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring focus:ring-blue-300"
+                className="px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring focus:ring-blue-300 dark:bg-gray-900 dark:text-white"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />

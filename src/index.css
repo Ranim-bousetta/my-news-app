@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html,
+body {
+  height: 100%;
+}
+body {
+  @apply dark:bg-gray-900;
+}
 .loader {
   width: 48px;
   height: 48px;
