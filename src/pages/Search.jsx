@@ -1,32 +1,10 @@
-import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import NewsCard from "../components/NewsCard.jsx";
 import Spinner from "../components/Spinner.jsx";
+import useNews from "../hooks/useNews.js";
 export default function Search() {
-  const [news, setNews] = useState("");
-  const [loading, setLoading] = useState(false);
   const { state } = useLocation();
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const url = `https://newsapi.org/v2/top-headlines?q=${state}&apiKey=${apiKey}`;
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        setNews(data.articles || []);
-      } catch (err) {
-        console.log(err);
-        setNews([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNews();
-  }, [url]);
-  console.log(news);
+  const { loading, news } = useNews("", "", state);
   return (
     <div className="dark:bg-gray-900 dark:text-white">
       <h1 className="text-center text-2xl font-bold text-gray-700 pt-10 dark:text-gray-300">
